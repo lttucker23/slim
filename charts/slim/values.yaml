@@ -41,6 +41,13 @@ slim:
             - endpoint: "0.0.0.0:{{ .Values.slim.service.control.port }}"
               tls:
                 insecure: true
+          # Uncomment below to connect to control plane with MTLS by Spire
+          # clients:
+          #   - endpoint: "https://slim-control:50052"
+          #     tls:      
+          #       cert_file: "/svids/tls.crt"
+          #       key_file: "/svids/tls.key"
+          #       ca_file: "/svids/svid_bundle.pem"
 
   # This is for setting up a service more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/
   service:
